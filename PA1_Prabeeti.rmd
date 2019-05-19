@@ -109,7 +109,7 @@ days_average <- aggregate(activity_data$steps,
                            weekdays = activity_data$weekdays),
                       FUN = "mean")
 names(days_average)[3] <- "mean_Steps"
-
+#######  8 .Make a panel plot containing a time series plot of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).
 xyplot(days_average$mean_Steps ~ days_average$interval | days_average$weekdays, 
        layout = c(1, 2), type = "l", 
        xlab = "Interval", ylab = "Number of steps")
